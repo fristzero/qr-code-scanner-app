@@ -1,3 +1,4 @@
+# 修改.github/workflows/build.yml文件
 name: Build Android APK
 
 on:
@@ -17,6 +18,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          cache: 'npm'
+      
+      - name: Install CLI tools
+        run: |
+          npm install -g expo-cli eas-cli --legacy-peer-deps
       
       - name: Install dependencies
         run: |

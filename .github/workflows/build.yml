@@ -32,7 +32,7 @@ jobs:
       
       - name: Export web build
         run: |
-          npx expo export --platform web
+          npx expo export --platform web --public-url https://fristero.github.io/qr-code-scanner-app
       
       - name: Build APK
         run: |

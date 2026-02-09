@@ -30,7 +30,10 @@ jobs:
           npx expo install --fix -- --legacy-peer-deps
           npx expo install react-native-web react-dom @expo/metro-runtime
       
+      - # 修改.github/workflows/build.yml文件
       - name: Build APK
-        run: npx eas build -p android --profile preview --non-interactive
+        run: |
+          # 使用--no-wait参数，构建完成后通过邮件通知
+          npx eas build -p android --profile preview --non-interactive --no-wait
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}

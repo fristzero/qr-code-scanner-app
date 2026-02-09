@@ -49,7 +49,6 @@ export default function App() {
     setResult(data);
     setHistory(prev => [data, ...prev]);
 
-    // Play beep sound
     try {
       const { sound } = await Audio.Sound.createAsync(
         require('./assets/beep.mp3')
